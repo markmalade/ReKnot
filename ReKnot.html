@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ReKnot.css">
+    
+    <div class="header">
+      <img src="/home/mark/ReKnot/Photos/logucis.png" class="image2">
+        <div class="header-right">
+          
+          <!-- <a class="active" href="#home">Home</a> -->
+          <a href="/home/mark/ReKnot/contacts.html">CONTACT</a>
+          <a href="/home/mark/ReKnot/about.html">ABOUT</a>
+        </div>
+      </div>
+    
+</head>
+<body>
+    
+    
+      <!-- Slideshow container -->
+<div class="slideshow-container">
+   
+    <!-- Full-width images with number and caption text -->
+    
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <div class="huv photoContainer" style="float: left;" onclick="changeSize(0)">
+        <img src="/home/mark/ReKnot/Photos/ReKnots_FotoZaneSproģe-30.jpg" style="width:100%;">
+      </div>
+      <div class="huv photoContainer" style="float: right;" onclick="changeSize(1)">
+        <img src="/home/mark/ReKnot/Photos/ReKnots_FotoZaneSproģe-17.jpg" style="width:100%;">
+      </div>
+      <div class="huv photoContainer" style="float: right;" onclick="changeSize(2)">
+        <img src="/home/mark/ReKnot/Photos/ReKnots_FotoZaneSproģe-21.jpg" style="width:100%;">
+      </div>
+      <div class="huv photoContainer" style="float: left;" onclick="changeSize(3)">
+        <img src="/home/mark/ReKnot/Photos/ReKnots_FotoZaneSproģe-33.jpg" style="width:100%;">
+      </div>
+      <div class="text"></div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="/home/mark/ReKnot/Photos/Fujaki" style="width:100%">
+      <div class="text"></div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="/home/mark/ReKnot/Photos/ReKnots_FotoZaneSproģe-14.jpg" style="width:100%">
+      <div class="text"></div>
+    </div>  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="resetStyle();plusSlides(-1);">&#10094;</a>
+    <a class="next" onclick="resetStyle();plusSlides(1);">&#10095;</a>
+  </div>
+  <br>
+ 
+  <script>
+    let photoSize=50;
+    function changeSize(i){
+      resetStyle();
+      let photos = document.getElementsByClassName("photoContainer");
+      photos[i].classList.remove("huv");
+      photos[i].style.width = "100%";
+      let a=0;
+      for (j =0; j<photos.length; j++){
+        if(j!=i) {
+          photos[j].style.position = "absolute";
+          photos[j].style.bottom = "0";
+          photos[j].style.right = a*10+35+"%";
+          photos[j].style.width = "10%";
+          if(!photos[j].classList.contains("huv")) photos[j].classList.add("huv");
+          a++;
+        }
+      }
+    }
+    function resetStyle(){
+        let photos = document.getElementsByClassName("photoContainer");
+        for(i =0; i<photos.length; i++){ 
+          if((i+1)%4==2 || (i+1)%4==3) photos[i].style = "width: 50%; padding: 1%; border-radius: 2%; float: right";
+          else photos[i].style = "width: 50%; padding: 1%; border-radius: 2%; float: left";
+          if(!photos[i].classList.contains("huv")) photos[i].classList.add("huv");
+        } 
+    }
+  </script>
+  <!-- The dots/circles -->
+  
+  <script>let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "inline-block";
+      dots[slideIndex-1].className += " active";
+    }</script>
+    
+</body>
+</html>
