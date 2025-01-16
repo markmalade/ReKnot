@@ -132,9 +132,11 @@
         return check;
     };
     function ifMobile(){
+        let mob=document.getElementsByClassName("Mobile");
+        let desk=document.getElementsByClassName("Desktop");
         if(true){
-            document.getElementsByClassName("Mobile").style.display = "none";
-            document.getElementsByClassName("Desktop").style.display = "inline";
+            mob[0].style.display = "none";
+            desk[0].style.display = "inline";
         }
         else{
             document.getElementsByClassName("Mobile").style.display = "inline";
