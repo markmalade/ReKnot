@@ -23,7 +23,7 @@ body/* Style the header with a grey background and some padding */
 body{
     background-color: rgba(25,25,25,255);
     
-    font-family: Monserrat-SemiBold, Sans-Serif;
+    font-family: 'Monserrat-SemiBold';
 }
 h1{
   color: white;
