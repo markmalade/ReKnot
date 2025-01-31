@@ -18,12 +18,12 @@ body/* Style the header with a grey background and some padding */
     position: sticky;
     top: 0;
     z-index: 999;
-    font-family: Impact, Sans-Serif;
+    font-family: Monserrat-SemiBold, Sans-Serif;
   }
 body{
     background-color: rgba(25,25,25,255);
     
-    font-family: Impact, Sans-Serif;
+    font-family: Monserrat-SemiBold, Sans-Serif;
 }
 h1{
   color: white;
